@@ -10,6 +10,7 @@ const pool = new Pool({
         rejectUnauthorized: false,
     },
 });
+
 export const getCommentsFromDB = async () => {
     try {
         const client = await pool.connect();
@@ -25,7 +26,7 @@ export const getCommentsFromDB = async () => {
 export const addCommentToDB = async (username, comment) => {
     try {
         const client = await pool.connect();
-        const result = await client.query('INSERT INTO kommentare (username, comment) VALUES ($1, $2) RETURNING *', [username, comment]);
+        const result = await client.query('INSERT INTO kommentare ("Benutzername", "Kommentar") VALUES ($1, $2) RETURNING *', [username, comment]);
         client.release();
         return result.rows[0];
     } catch (error) {
@@ -33,4 +34,5 @@ export const addCommentToDB = async (username, comment) => {
         return null;
     }
 };
+
 
