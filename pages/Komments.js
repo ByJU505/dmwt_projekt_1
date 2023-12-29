@@ -67,11 +67,11 @@ const DatabaseAccess = () => {
             <h2>Kommentare aus der Datenbank</h2>
             {comments.length > 0 ? (
                 <ul className={style.commentList}>
-                    {comments.map((comment, index) => (
-                        <li key={index} className={style.comment}>
+                    {comments.map((comment) => (
+                        <li key={comment.id} className={style.comment}>
                             <div className={style.commentDetails}>
-                                <p className={style.username}>Nutzer: {comment.username}</p>
-                                <p className={style.commentText}>{comment.comment}</p>
+                                <p className={style.username}>Nutzer: {comment.benutzername}</p>
+                                <p className={style.commentText}>{comment.kommentar}</p>
                             </div>
                         </li>
                     ))}
