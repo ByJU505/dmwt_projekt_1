@@ -2,37 +2,43 @@
 
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
+import { addCommentToDB, getCommentsFromDB } from './DB';
 
 const DatabaseAccess = () => {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
     useEffect(() => {
-        fetch('/api/comments')
-            .then((response) => response.json())
-            .then((data) => setComments(data))
-            .catch((error) => console.error('Fehler beim Abrufen der Daten:', error));
+        fetchComments();
     }, []);
+
+    const fetchComments = async () => {
+        try {
+            const data = await getCommentsFromDB();
+            setComments(data);
+        } catch (error) {
+            console.error('Fehler beim Abrufen der Daten:', error);
+        }
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setNewComment((prevComment) => ({ ...prevComment, [name]: value }));
     };
 
-    const handleSubmit = () => {
-        fetch('/api/comments', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newComment),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setComments([...comments, data.comment]);
+    const handleSubmit = async () => {
+        try {
+            const { username, comment } = newComment;
+            const data = await addCommentToDB(username, comment);
+            if (data) {
+                setComments([...comments, data]);
                 setNewComment({ username: '', comment: '' });
-            })
-            .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
+            } else {
+                console.error('Fehler beim Hinzufügen des Kommentars.');
+            }
+        } catch (error) {
+            console.error('Fehler beim Hinzufügen des Kommentars:', error);
+        }
     };
 
     return (
