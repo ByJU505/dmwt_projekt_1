@@ -2,7 +2,7 @@ import styles from "../styles/hero2.module.css";
 import React from 'react';
 
 
-function Hero() {
+function Hero3() {
     return (
         <div className={styles.container}>
             <div className={styles.fixedImage}></div>
@@ -14,4 +14,4 @@ function Hero() {
     );
 }
 
-export default Hero;
+export default Hero3;
