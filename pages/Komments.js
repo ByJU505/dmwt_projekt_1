@@ -5,11 +5,21 @@ const DatabaseAccess = () => {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
-    useEffect(() => {
+    const fetchComments = () => {
         fetch('/api/comments')
             .then((response) => response.json())
             .then((data) => setComments(data))
             .catch((error) => console.error('Fehler beim Abrufen der Daten:', error));
+    };
+
+    useEffect(() => {
+        fetchComments();
+
+        const interval = setInterval(() => {
+            fetchComments();
+        }, 5000);
+
+        return () => clearInterval(interval);
     }, []);
 
     const handleInputChange = (e) => {
