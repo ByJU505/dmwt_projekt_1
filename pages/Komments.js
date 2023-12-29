@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
-import { addCommentToDB, getCommentsFromDB } from './DB';
+import { addCommentToDB, getCommentsFromDB } from './/api//DB';
 
 const Komments = ({ comments: initialComments }) => {
     const [comments, setComments] = useState(initialComments);
