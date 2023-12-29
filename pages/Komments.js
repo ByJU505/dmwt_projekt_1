@@ -1,3 +1,5 @@
+//Komments.js
+
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
 
