@@ -2,15 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
-import { addCommentToDB, getCommentsFromDB } from './/api//DB';
+import { addCommentToDB, getCommentsFromDB } from './DB';
 
-const DatabaseAccess = () => {
-    const [comments, setComments] = useState([]);
+const DatabaseAccess = ({ comments: initialComments }) => {
+    const [comments, setComments] = useState(initialComments);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
-
-    useEffect(() => {
-        fetchComments();
-    }, []);
 
     const fetchComments = async () => {
         try {
@@ -20,6 +16,10 @@ const DatabaseAccess = () => {
             console.error('Fehler beim Abrufen der Daten:', error);
         }
     };
+
+    useEffect(() => {
+        fetchComments();
+    }, []);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;

@@ -36,4 +36,3 @@ export const addCommentToDB = async (username, comment) => {
         return null;
     }
 };
-
