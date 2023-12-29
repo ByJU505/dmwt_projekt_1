@@ -1,0 +1,47 @@
+.body1{
+    margin-left: -16px;
+    margin-right: -8px;
+    background-color: #313338;
+    height: 100vh;
+}
+
+.ueberschrift{
+    position: absolute;
+    padding-left: 2%;
+    font-family: Roboto;
+    font-size: 70px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.Green{
+    color: #2F9315;
+}
+
+.gridContainer {
+    position: relative;
+    top: 30%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15%;
+}
+
+.gridSubtitle {
+    margin-bottom: 5%;
+    text-align: left;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.gridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8%;
+    margin-right: 8%;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding-top: 10%;
+}

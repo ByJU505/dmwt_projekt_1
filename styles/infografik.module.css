@@ -1,0 +1,22 @@
+.content {
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: -16px;
+    width: auto;
+    height: 100vh;
+    background-color: #313338;
+    left: -10px;
+}
+
+.ueberschrift{
+    position: absolute;
+    padding-left: 2%;
+    font-family: Roboto;
+    font-size: 70px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.ueberschriftGreen {
+    color: #2F9315;
+}
