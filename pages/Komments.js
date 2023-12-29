@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
 import { addCommentToDB, getCommentsFromDB } from './DB';
 
-const DatabaseAccess = ({ comments: initialComments }) => {
+const Komments = ({ comments: initialComments }) => {
     const [comments, setComments] = useState(initialComments);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
@@ -79,4 +79,4 @@ const DatabaseAccess = ({ comments: initialComments }) => {
     );
 };
 
-export default DatabaseAccess;
+export default Komments;
