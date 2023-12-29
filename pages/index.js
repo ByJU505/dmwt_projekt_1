@@ -6,7 +6,7 @@ import Information1 from "./Information1";
 import Hero2 from "./hero2";
 import Information2 from "./Information2";
 import Quiz from "./Quiz";
-import Hero3 from "./hero3";
+import Hero3 from "./Hero3";
 import Komments from "./Komments";
 import Footer from "./footer";
 
