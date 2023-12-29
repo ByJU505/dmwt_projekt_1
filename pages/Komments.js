@@ -14,6 +14,7 @@ const DatabaseAccess = () => {
                 throw new Error('Fehler beim Abrufen der Daten');
             }
             const data = await response.json();
+            console.log('Data from API:', data);
             setComments(data);
         } catch (error) {
             console.error(error.message);
