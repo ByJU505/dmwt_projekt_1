@@ -1,12 +1,15 @@
-const { Pool } = require('pg');
+import { Pool } from 'pg';
 
 const pool = new Pool({
-    connectionString: 'postgres://default:OEQypVDJ0ug3@ep-tight-frost-78860768-pooler.eu-central-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15',
+    user: 'default',
+    host: 'ep-tight-frost-78860768-pooler.eu-central-1.postgres.vercel-storage.com',
+    database: 'verceldb',
+    password: 'OEQypVDJ0ug3',
+    port: 5432,
     ssl: {
         rejectUnauthorized: false,
     },
 });
-
 const getCommentsFromDB = async () => {
     try {
         const client = await pool.connect();
