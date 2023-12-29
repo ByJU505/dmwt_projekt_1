@@ -1,24 +1,15 @@
-//Komments.js
-
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
-import { addCommentToDB, getCommentsFromDB } from './/api//DB';
 
-const Komments = ({ comments: initialComments }) => {
-    const [comments, setComments] = useState(initialComments);
+const DatabaseAccess = () => {
+    const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
-    const fetchComments = async () => {
-        try {
-            const data = await getCommentsFromDB();
-            setComments(data);
-        } catch (error) {
-            console.error('Fehler beim Abrufen der Daten:', error);
-        }
-    };
-
     useEffect(() => {
-        fetchComments();
+        fetch('/api/comments')
+            .then((response) => response.json())
+            .then((data) => setComments(data))
+            .catch((error) => console.error('Fehler beim Abrufen der Daten:', error));
     }, []);
 
     const handleInputChange = (e) => {
@@ -26,19 +17,20 @@ const Komments = ({ comments: initialComments }) => {
         setNewComment((prevComment) => ({ ...prevComment, [name]: value }));
     };
 
-    const handleSubmit = async () => {
-        try {
-            const { username, comment } = newComment;
-            const data = await addCommentToDB(username, comment);
-            if (data) {
-                setComments([...comments, data]);
+    const handleSubmit = () => {
+        fetch('/api/comments', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newComment),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setComments([...comments, data.comment]);
                 setNewComment({ username: '', comment: '' });
-            } else {
-                console.error('Fehler beim Hinzufügen des Kommentars.');
-            }
-        } catch (error) {
-            console.error('Fehler beim Hinzufügen des Kommentars:', error);
-        }
+            })
+            .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
     };
 
     return (
@@ -79,4 +71,4 @@ const Komments = ({ comments: initialComments }) => {
     );
 };
 
-export default Komments;
+export default DatabaseAccess;
