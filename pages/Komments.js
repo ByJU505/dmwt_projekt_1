@@ -54,11 +54,13 @@ const DatabaseAccess = () => {
         <div className={style.commentsSection}>
             <h2>Kommentare aus der Datenbank</h2>
             {comments.length > 0 ? (
-                <ul>
+                <ul className={style.commentList}>
                     {comments.map((comment, index) => (
                         <li key={index} className={style.comment}>
-                            <p className={style.username}>{comment.username}</p>
-                            <p className={style.commentText}>{comment.comment}</p>
+                            <div className={style.commentDetails}>
+                                <p className={style.username}>Nutzer: {comment.username}</p>
+                                <p className={style.commentText}>{comment.comment}</p>
+                            </div>
                         </li>
                     ))}
                 </ul>
@@ -89,3 +91,4 @@ const DatabaseAccess = () => {
 };
 
 export default DatabaseAccess;
+
