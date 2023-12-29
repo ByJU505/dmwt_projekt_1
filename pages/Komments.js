@@ -46,7 +46,6 @@ const DatabaseAccess = () => {
                 .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
         } else {
             console.log('Benutzername und Kommentar dürfen nicht leer sein.');
-            // Hier könntest du eine Benachrichtigung oder Handhabung für den Benutzer hinzufügen
         }
     };
 
