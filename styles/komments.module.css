@@ -73,3 +73,23 @@
 .addComment button:hover {
     background-color: #0056b3;
 }
+
+.commentList {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.username {
+    font-weight: bold;
+    color: blue; /* Farbe für den Benutzernamen */
+}
+
+.commentText {
+    color: green; /* Farbe für den Kommentarinhalt */
+}
