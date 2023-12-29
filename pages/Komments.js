@@ -8,7 +8,7 @@ const DatabaseAccess = () => {
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
     useEffect(() => {
-        fetch('/api/getComments')
+        fetch('/api/comments')
             .then((response) => response.json())
             .then((data) => setComments(data))
             .catch((error) => console.error('Fehler beim Abrufen der Daten:', error));
@@ -20,7 +20,7 @@ const DatabaseAccess = () => {
     };
 
     const handleSubmit = () => {
-        fetch('/api/addComment', {
+        fetch('/api/comments', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
