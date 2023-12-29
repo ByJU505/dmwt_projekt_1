@@ -7,11 +7,17 @@ const DatabaseAccess = () => {
     const [comments, setComments] = useState([]);
     const [newComment, setNewComment] = useState({ username: '', comment: '' });
 
-    const fetchComments = () => {
-        fetch('/api/comments')
-            .then((response) => response.json())
-            .then((data) => setComments(data))
-            .catch((error) => console.error('Fehler beim Abrufen der Daten:', error));
+    const fetchComments = async () => {
+        try {
+            const response = await fetch('/api/comments');
+            if (!response.ok) {
+                throw new Error('Fehler beim Abrufen der Daten');
+            }
+            const data = await response.json();
+            setComments(data);
+        } catch (error) {
+            console.error(error.message);
+        }
     };
 
     useEffect(() => {
@@ -29,23 +35,29 @@ const DatabaseAccess = () => {
         setNewComment((prevComment) => ({ ...prevComment, [name]: value }));
     };
 
-    const handleSubmit = () => {
-        if (newComment.username.trim() !== '' && newComment.comment.trim() !== '') {
-            fetch('/api/comments', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newComment),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    setComments([...comments, data.comment]);
-                    setNewComment({ username: '', comment: '' });
-                })
-                .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
-        } else {
-            console.log('Benutzername und Kommentar dürfen nicht leer sein.');
+    const handleSubmit = async () => {
+        try {
+            if (newComment.username.trim() !== '' && newComment.comment.trim() !== '') {
+                const response = await fetch('/api/comments', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newComment),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Fehler beim Hinzufügen des Kommentars');
+                }
+
+                const data = await response.json();
+                setComments([...comments, data.comment]);
+                setNewComment({ username: '', comment: '' });
+            } else {
+                console.log('Benutzername und Kommentar dürfen nicht leer sein.');
+            }
+        } catch (error) {
+            console.error(error.message);
         }
     };
 
