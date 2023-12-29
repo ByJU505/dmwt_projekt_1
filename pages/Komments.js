@@ -1,3 +1,5 @@
+//Komments.jsg
+
 import { useState, useEffect } from 'react';
 import style from '../styles/komments.module.css';
 
@@ -28,19 +30,24 @@ const DatabaseAccess = () => {
     };
 
     const handleSubmit = () => {
-        fetch('/api/comments', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newComment),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                setComments([...comments, data.comment]);
-                setNewComment({ username: '', comment: '' });
+        if (newComment.username.trim() !== '' && newComment.comment.trim() !== '') {
+            fetch('/api/comments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newComment),
             })
-            .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
+                .then((response) => response.json())
+                .then((data) => {
+                    setComments([...comments, data.comment]);
+                    setNewComment({ username: '', comment: '' });
+                })
+                .catch((error) => console.error('Fehler beim Hinzufügen des Kommentars:', error));
+        } else {
+            console.log('Benutzername und Kommentar dürfen nicht leer sein.');
+            // Hier könntest du eine Benachrichtigung oder Handhabung für den Benutzer hinzufügen
+        }
     };
 
     return (
