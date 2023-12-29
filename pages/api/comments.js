@@ -1,4 +1,4 @@
-import { addCommentToDB, getCommentsFromDB } from '..//api//DB';
+import { addCommentToDB, getCommentsFromDB } from './DB';
 
 export default async function handler(req, res) {
     if (req.method === 'GET') {

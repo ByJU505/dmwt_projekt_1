@@ -10,7 +10,7 @@ const pool = new Pool({
         rejectUnauthorized: false,
     },
 });
-const getCommentsFromDB = async () => {
+export const getCommentsFromDB = async () => {
     try {
         const client = await pool.connect();
         const result = await client.query('SELECT * FROM kommentare');
@@ -22,12 +22,12 @@ const getCommentsFromDB = async () => {
     }
 };
 
-const addCommentToDB = async (username, comment) => {
+export const addCommentToDB = async (username, comment) => {
     try {
         const client = await pool.connect();
         const result = await client.query('INSERT INTO kommentare (username, comment) VALUES ($1, $2) RETURNING *', [username, comment]);
         client.release();
-        return result.rows[0]; // Gibt den hinzugefügten Kommentar zurück
+        return result.rows[0];
     } catch (error) {
         console.error('Fehler beim Hinzufügen des Kommentars:', error);
         return null;
