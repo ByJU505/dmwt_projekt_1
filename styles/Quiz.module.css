@@ -1,0 +1,28 @@
+.body1{
+    position: relative;
+    background-color: aqua;
+    width: 99.2vw;
+    left: -8px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Zwei Spalten, gleiche Breite */
+    grid-gap: 0px;
+}
+
+.body_picture13{
+    background-color: #06002f;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex: 1;
+}
+
+.body_content13{
+    background-color: darkmagenta;
+
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    padding: 0;
+}
