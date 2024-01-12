@@ -1,4 +1,3 @@
-//comments.js
 
 import { Pool } from 'pg';
 

@@ -24,7 +24,7 @@ const DatabaseAccess = () => {
 
         const interval = setInterval(() => {
             fetchComments();
-        }, 5000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
