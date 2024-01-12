@@ -23,11 +23,11 @@
 .tab {
     position: relative;
     z-index: 2;
-    padding: 1vh 2vh;
+    padding: 1vh;
     cursor: pointer;
     border: 2px solid;
     transition: border-bottom 0.3s ease;
-    font-size: 4vh;
+    font-size: 3vh;
     font-family: Joystix;
     color: #FFFFFF;
     align-items: center;
