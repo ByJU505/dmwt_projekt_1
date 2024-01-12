@@ -2,7 +2,7 @@
     margin-left: -8px;
     margin-top: -32px;
     background-color: #313338;
-    height: 100vh;
+    height: 110vh;
     width: 99.2vw;
 }
 
@@ -58,7 +58,7 @@
 
 .button {
     background: url('../styles/pictures/Cloud_Idle.png') no-repeat center center;
-    background-size: 20%;
+    background-size: 50%;
     border: none;
     outline: none;
     padding-top: 20vh;
@@ -94,4 +94,45 @@
 
 .active {
     font-weight: bold;
+}
+
+.CloudIncorrect {
+    background: url('../styles/pictures/Cloud_Wrong.png') no-repeat center center;
+    background-size: 50%;
+}
+
+.CloudCorrect {
+    background: url('../styles/pictures/Cloud_Right.png') no-repeat center center;
+    background-size: 50%;
+}
+
+.Ende {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Joystix;
+    padding-top: 20vh;
+    font-size: 5vh;
+}
+
+.positionButton {
+    position: relative;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.restart-button {
+    position: absolute;
+    background-image: url('../styles/pictures/Button_hell_blau.png');
+    cursor: pointer;
+    height: 15vh;
+    width: 25vw;
+    color: #FFFFFF;
+    font-family: Joystix;
+    font-size: 2vw;
+}
+
+.restart-button:hover {
+    background-image: url('../styles/pictures/Button_dunkel_blau.png');
 }

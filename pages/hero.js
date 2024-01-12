@@ -7,7 +7,7 @@ function Hero() {
     const scrollTo = (event) => {
         event.preventDefault();
         window.scrollTo({
-            top: 1000,
+            top: document.body.offsetHeight* (1/8),
             behavior: 'smooth'
         });
     };

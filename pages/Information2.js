@@ -87,13 +87,18 @@ const Information2 = () => {
         <div className={styles.tabbedGrid}>
             <p className={styles.ueberschrift}>Dig Deeper</p>
             <div className={styles.tabs}>
-                {[1, 2, 3, 4].map((tabIndex) => (
+                {[
+                    { index: 1, label: 'Introduction of Green Cloud Computing' },
+                    { index: 2, label: 'Green Internet of Things (IoT)' },
+                    { index: 3, label: 'Infrastructure and Technology Enhancements' },
+                    { index: 4, label: 'Data Center Sustainability: A Top Priority' },
+                ].map((tab) => (
                     <div
-                        key={tabIndex}
-                        className={`${styles.tab} ${activeTab === tabIndex - 1 ? styles.active : ''}`}
-                        onClick={() => changeTab(tabIndex - 1)}
+                        key={tab.index}
+                        className={`${styles.tab} ${activeTab === tab.index - 1 ? styles.active : ''}`}
+                        onClick={() => changeTab(tab.index - 1)}
                     >
-                        <span>Tab {tabIndex}</span>
+                        <span>{tab.label}</span>
                     </div>
                 ))}
             </div>
@@ -104,20 +109,20 @@ const Information2 = () => {
                         className={`${styles.tabPane} ${activeTab === tabIndex ? styles.active : ''}`}
                     >
                         <p className={styles.scrollableText}>
-                            <Image
+                            {/*<Image
                                 src={tabContent[tabIndex].image}
                                 alt={`Bild für Tab ${tabIndex + 1}`}
                                 width={500}
                                 height={300}
                                 className={styles.contentImage}
                             />
-                            <br/>
+                            <br /> */}
                             {tabContent[tabIndex].text}
                         </p>
                     </div>
                 ))}
-                <div className={styles.box}/>
-                <div className={styles.greybox}/>
+                <div className={styles.box} />
+                <div className={styles.greybox} />
             </div>
         </div>
     );

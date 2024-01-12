@@ -57,6 +57,8 @@
 
 .scrollableText {
     position: relative;
+    display: flex;
+    flex-direction: row;
     z-index: 2;
     height: 50vh;
     overflow-y: auto;
@@ -81,6 +83,6 @@
     left: -8px;
     bottom: 4.2vh;
     height: 56.4vh;
-    width: 98vw;
+    width: 99.5vw;
     background-color: #404249;
 }

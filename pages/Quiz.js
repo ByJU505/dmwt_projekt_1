@@ -1,34 +1,34 @@
-//import React from 'react';
 import styles from "../styles/Quiz.module.css";
 import React, { useState, useEffect } from 'react';
+import classNames from "classnames";
 
 
 function Quiz() {
     const questions = [
         {
-            question: 'Was ist die Hauptstadt von Frankreich?',
-            options: ['Berlin', 'Madrid', 'Paris', 'Rom'],
-            correctAnswer: 'Paris',
+            question: 'What is the primary focus of Green Cloud Computing, beyond minimizing energy consumption?',
+            options: ['Improving operational cost', 'Maximizing e-waste in data centers', 'Increasing carbon emissions', 'Boosting server reliability'],
+            correctAnswer: 'Boosting server reliability',
         },
         {
-            question: 'Welches ist das größte Säugetier der Welt?',
-            options: ['Elefant', 'Walhai', 'Giraffe', 'Blauwal'],
-            correctAnswer: 'Blauwal',
+            question: 'Which application of Green Cloud Computing involves real-time services for smart devices with low latency and mobility?',
+            options: ['Green Parallel Computing', 'Green AI Cloud', 'Green Internet of Things (IoT)', 'Autonomous vehicles'],
+            correctAnswer: 'Green Internet of Things (IoT)',
         },
         {
-            question: 'Wie viele Planeten gibt es in unserem Sonnensystem?',
-            options: ['7', '8', '9', '10'],
-            correctAnswer: '8',
+            question: 'What is the primary purpose of using a global search algorithm in the Optimal Parameter Search layer in Green Cloud Computing?',
+            options: ['Reducing energy consumption', 'Locating a global optimum', 'Increasing operational cost', 'Enhancing server utility rate'],
+            correctAnswer: 'Locating a global optimum',
         },
         {
-            question: 'Wer hat die Relativitätstheorie entwickelt?',
-            options: ['Isaac Newton', 'Albert Einstein', 'Galileo Galilei', 'Nikola Tesla'],
-            correctAnswer: 'Albert Einstein',
+            question: 'How does real-time video streaming, especially on platforms like Netflix, impact energy consumption and carbon footprint according to the provided information?',
+            options: ['It has no significant impact', 'It reduces carbon emissions', 'It may overstate climate impact by up to 90 times', 'It consumes negligible energy'],
+            correctAnswer: 'It may overstate climate impact by up to 90 times',
         },
         {
-            question: 'Welches Element hat das chemische Symbol "O"?',
-            options: ['Sauerstoff', 'Gold', 'Kohlenstoff', 'Eisen'],
-            correctAnswer: 'Sauerstoff',
+            question: 'What is a key factor in achieving sustainability in data centers, as emphasized in the text?',
+            options: ['Maximizing carbon emissions', 'Optimizing resource utility', 'Increasing waste production', 'Encouraging energy inefficiency'],
+            correctAnswer: 'Optimizing resource utility',
         },
     ];
 
@@ -103,10 +103,12 @@ function Quiz() {
             </div>
             {quizCompleted ? (
                 <>
-                    <p>Quiz beendet! Dein Punktestand ist {score}/{questions.length}</p>
-                    <button className={styles['restart-button']} onClick={handleRestart}>
-                        Neustart
-                    </button>
+                    <p className={styles.Ende}>Quiz completed! Your score is: {score}/{questions.length}</p>
+                    <div className={styles.positionButton}>
+                        <button className={styles['restart-button']} onClick={handleRestart}>
+                            Restart
+                        </button>
+                    </div>
                 </>
             ) : (
                 <>
@@ -118,15 +120,12 @@ function Quiz() {
                             <button
                                 key={index}
                                 onClick={() => handleAnswerClick(option)}
-                                className={styles.button}
-                                style={{
-                                    backgroundColor:
-                                        selectedAnswer === option
-                                            ? option === questions[currentQuestion].correctAnswer
-                                                ? 'green'
-                                                : 'red'
-                                            : '',
-                                }}
+                                className={
+                                    classNames(styles.button, {
+                                        [styles.CloudCorrect]: selectedAnswer === option && option === questions[currentQuestion].correctAnswer,
+                                        [styles.CloudIncorrect]: selectedAnswer === option && option !== questions[currentQuestion].correctAnswer,
+                                    })
+                                }
                                 disabled={selectedAnswer !== null}
                             >
                                 {option}

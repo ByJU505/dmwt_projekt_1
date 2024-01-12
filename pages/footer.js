@@ -9,6 +9,15 @@ function Footer() {
             behavior: 'smooth'
         });
     };
+
+    const handleAboutClick = () => {
+        window.open('https://www.inf.reutlingen-university.de', '_Blank');
+    }
+
+    const handleCommunityClick = () => {
+        window.open('https://www.instagram.com/inf.reutlingen/', '_Blank');
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.footer}>
@@ -23,8 +32,8 @@ function Footer() {
                     />
                 </div>
                 <div className={styles.navLinks}>
-                    <a href="#" style={{ color: '#FFFFFF' }}>About</a>
-                    <a href="#" style={{ color: '#FFFFFF' }}>Community</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={handleAboutClick}>About</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={handleCommunityClick}>Community</a>
                 </div>
             </div>
         </div>

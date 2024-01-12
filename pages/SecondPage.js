@@ -35,6 +35,13 @@ const TestPage = () => {
         });
     };
 
+    const handleAboutClick = () => {
+        window.open('https://www.inf.reutlingen-university.de', '_Blank');
+    }
+
+    const handleCommunityClick = () => {
+        window.open('https://www.instagram.com/inf.reutlingen/', '_Blank');
+    }
 
 
     return (
@@ -54,8 +61,8 @@ const TestPage = () => {
                     <div className={styles.navLinks}>
                         <a href="#"
                            style={{ color: '#FFFFFF' }} onClick={handleDonationButtonClick}>Donation</a>
-                        <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToComment}>Comment</a>
-                        <a href="#" style={{ color: '#FFFFFF' }} onClick={changePage}>Home</a>
+                        <a href="" style={{ color: '#FFFFFF' }} onClick={scrollToComment}>Comment</a>
+                        <a href="" style={{ color: '#FFFFFF' }} onClick={changePage}>Home</a>
                     </div>
                 </div>
             </div>
@@ -73,8 +80,8 @@ const TestPage = () => {
                         />
                     </div>
                     <div className={Styles.navLinks}>
-                        <a href="#" style={{ color: '#FFFFFF' }}>About</a>
-                        <a href="#" style={{ color: '#FFFFFF' }}>Community</a>
+                        <a href="#" style={{ color: '#FFFFFF' }} onClick={handleAboutClick}>About</a>
+                        <a href="#" style={{ color: '#FFFFFF' }} onClick={handleCommunityClick}>Community</a>
                     </div>
                 </div>
             </div>

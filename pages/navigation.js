@@ -13,21 +13,21 @@ function Navigation() {
     const scrollToDiagramm = (event) => {
         event.preventDefault();
         window.scrollTo({
-            top: 500, // Beispielposition für das Diagramm (anpassen nach Bedarf)
+            top: document.body.offsetHeight* (1/8),
             behavior: 'smooth'
         });
     };
     const scrollToInformation = (event) => {
         event.preventDefault();
         window.scrollTo({
-            top: 1000, // Beispielposition für die Information (anpassen nach Bedarf)
+            top: document.body.offsetHeight* (2/8),
             behavior: 'smooth'
         });
     };
     const scrollToQuiz = (event) => {
         event.preventDefault();
         window.scrollTo({
-            top: 1500, // Beispielposition für das Quiz (anpassen nach Bedarf)
+            top: document.body.offsetHeight* (5.25/8),
             behavior: 'smooth'
         });
     };
