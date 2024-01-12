@@ -11,6 +11,8 @@ import Komments from "./Komments";
 import Footer from "./footer";
 import Buttons from "./Buttons"
 
+import '../styles/styles.module.css';
+
 
 export default function home() {
     return (

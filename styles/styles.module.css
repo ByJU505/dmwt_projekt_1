@@ -1,0 +1,35 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add your global styles here */
+
+/* Navigation styles */
+/* Hero styles */
+/* Infografik styles */
+/* Information1 styles */
+/* Hero2 styles */
+/* Information2 styles */
+/* Quiz styles */
+/* Hero3 styles */
+/* Komment styles */
+/* Buttons styles */
+/* Footer styles */
+
+/* Media queries for responsiveness */
+
+/* Small screens */
+@media (max-width: 600px) {
+    /* Adjust styles for small screens */
+}
+
+/* Medium screens */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Adjust styles for medium screens */
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+    /* Adjust styles for large screens */
+}

@@ -57,7 +57,8 @@
 }
 
 .button {
-    background: url('../styles/pictures/Vector 16.png') no-repeat center center;
+    background: url('../styles/pictures/Cloud_Idle.png') no-repeat center center;
+    background-size: 20%;
     border: none;
     outline: none;
     padding-top: 20vh;
@@ -85,12 +86,12 @@
 }
 
 .register span {
-    padding: 5px;
+    padding: 0.5%;
     border: #FFFFFF 1px solid;
     color: #FFFFFF;
+    font-family: Joystix;
 }
 
 .active {
     font-weight: bold;
-
 }
