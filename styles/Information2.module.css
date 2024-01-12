@@ -10,8 +10,8 @@
 
 .ueberschrift {
     padding-left: 2%;
-    font-family: Roboto;
-    font-size: 70px;
+    font-family: Joystix;
+    font-size: 5vh;
     font-weight: bold;
     color: #FFFFFF;
 }
@@ -21,21 +21,25 @@
 }
 
 .tab {
-    padding: 10px 20px;
+    position: relative;
+    z-index: 2;
+    padding: 1vh 2vh;
     cursor: pointer;
     border: 2px solid;
     transition: border-bottom 0.3s ease;
-    font-size: 40px;
+    font-size: 4vh;
+    font-family: Joystix;
     color: #FFFFFF;
     align-items: center;
 }
 
 .tab:hover {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #404249;
 }
 
 .active {
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #404249;
+    background-color: #404249;
 }
 
 .tabContent {
@@ -52,10 +56,31 @@
 }
 
 .scrollableText {
+    position: relative;
+    z-index: 2;
     height: 50vh;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    font-size: 40px;
+    font-size: 2vh;
+    font-family: Joystix;
     color: #FFFFFF;
+}
+
+.box {
+    position: absolute;
+    left: -8px;
+    bottom: 0%;
+    height: 6.3vh;
+    width: 99vw;
+    background-color: #313338;
+}
+.greybox {
+    z-index: 1;
+    position: absolute;
+    left: -8px;
+    bottom: 4.2vh;
+    height: 56.4vh;
+    width: 98vw;
+    background-color: #404249;
 }

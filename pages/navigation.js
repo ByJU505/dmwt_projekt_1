@@ -32,23 +32,29 @@ function Navigation() {
         });
     };
 
+    const handleDonationButtonClick = () => {
+        window.open('https://engage.us.greenpeace.org/onlineactions/GB7jeaDze0eR5tWt3kWG_w2?utm_source=website&utm_medium=hero&utm_campaign=evergreen&sourceid=1018080&_gl=1*zo9wvy*_gcl_au*MTIyMTcwNTQxMy4xNzA0OTc1MDE3&_ga=2.13561783.1460770407.1704975017-1725568931.1704975016', '_Blank');
+    }
+
     return (
-        <div className={styles.navigation}>
-            <div className={styles.logo}>
-                <Image
-                    src={require("../styles/pictures/CloudIT_Logo.png").default}
-                    alt={"Logo"}
-                    width={100}
-                    height={58}
-                    onClick={scrollToTop}
-                    style={{ cursor: 'pointer' }}
-                />
-            </div>
-            <div className={styles.navLinks}>
-                <a href="#" style={{ color: '#FFFFFF' }}>Donation</a>
-                <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToDiagramm}>Diagramm</a>
-                <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToInformation}>Information</a>
-                <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToQuiz}>Quiz</a>
+        <div className={styles.container}>
+            <div className={styles.navigation}>
+                <div className={styles.logo}>
+                    <Image
+                        src={require("../styles/pictures/CloudIT_Logo.png").default}
+                        alt={"Logo"}
+                        width={100}
+                        height={58}
+                        onClick={scrollToTop}
+                        style={{ cursor: 'pointer' }}
+                    />
+                </div>
+                <div className={styles.navLinks}>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={handleDonationButtonClick}>Donation</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToDiagramm}>Diagramm</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToInformation}>Information</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToQuiz}>Quiz</a>
+                </div>
             </div>
         </div>
     );

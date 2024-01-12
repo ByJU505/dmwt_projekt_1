@@ -10,6 +10,7 @@
 
 .commentsSection h2 {
     font-size: 24px;
+    font-family: Joystix;
     margin-bottom: 15px;
 }
 
@@ -20,16 +21,19 @@
 
 .comment {
     margin-bottom: 15px;
+    background-color: #41444B;
 }
 
 .username {
     font-weight: bold;
     font-size: 18px;
+    font-family: Joystix;
     margin-bottom: 5px;
 }
 
 .commentText {
     font-size: 16px;
+    font-family: Joystix;
     line-height: 1.5;
 }
 
@@ -39,6 +43,7 @@
 
 .addComment h3 {
     font-size: 20px;
+    font-family: Joystix;
     margin-bottom: 10px;
 }
 
@@ -48,6 +53,7 @@
     width: 100%;
     padding: 10px;
     font-size: 16px;
+    font-family: Joystix;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 15px;
@@ -64,14 +70,14 @@
 }
 
 .addComment button {
-    background-color: #007bff;
+    background-image: url('../styles/pictures/Button_hell_blau.png');
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .addComment button:hover {
-    background-color: #0056b3;
+    background-image: url('../styles/pictures/Button_dunkel_blau.png');
 }
 
 .commentList {
@@ -91,5 +97,5 @@
 }
 
 .commentText {
-    color: green; /* Farbe für den Kommentarinhalt */
+    color: #FFFFFF;
 }

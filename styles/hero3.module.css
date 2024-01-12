@@ -36,11 +36,40 @@
     background-color: #313338;
 }
 
-/* hero2.module.css */
 .defaultImage {
     background-image: url('../styles/pictures/Herobild2_DMWT.gif');
 }
 
 .changedImage {
     background-image: url('../styles/pictures/Herobild3_DMWT.gif');
+}
+
+.GreenIT span {
+    color: #2F9315;
+    font-size: 5vh;
+}
+
+.GreenIT{
+    z-index: 0;
+    padding-top: 2%;
+    position: absolute;
+    left: 39%;
+    top: 50%;
+    font-size: 5vh;
+    font-family: Joystix;
+    height: 40vh;
+    width: 40vh;
+    text-align: center
+}
+
+.whiteBox {
+    z-index: 0;
+    position: absolute;
+    background-color: #D9D9D9;
+    left: 39%;
+    top: 53%;
+    height: 40vh;
+    width: 40vh;
+    opacity: 0.75;
+    filter: blur(2px);
 }

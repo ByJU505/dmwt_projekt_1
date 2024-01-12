@@ -64,39 +64,39 @@ const DatabaseAccess = () => {
 
     return (
         <div className={style.commentsSection}>
-            <h2>Kommentare aus der Datenbank</h2>
+            <h2>Das ist eine Unsichtbare Überschrift</h2>
             {comments.length > 0 ? (
                 <ul className={style.commentList}>
                     {comments.map((comment) => (
                         <li key={comment.id} className={style.comment}>
                             <div className={style.commentDetails}>
-                                <p className={style.username}>Nutzer: {comment.benutzername}</p>
+                                <p className={style.username}>User: {comment.benutzername}</p>
                                 <p className={style.commentText}>{comment.kommentar}</p>
                             </div>
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>Keine Kommentare vorhanden.</p>
+                <p>No comments</p>
             )}
 
             <div className={style.addComment}>
-                <h3>Neuen Kommentar verfassen</h3>
+                <h3>New comment</h3>
                 <input
                     type="text"
                     name="username"
-                    placeholder="Nutzername"
+                    placeholder="Username"
                     value={newComment.username}
                     onChange={handleInputChange}
                 />
                 <textarea
                     name="comment"
-                    placeholder="Dein Kommentar"
+                    placeholder="Your comment"
                     value={newComment.comment}
                     onChange={handleInputChange}
                     className={style.customTextarea}
                 ></textarea>
-                <button onClick={handleSubmit}>Kommentar hinzufügen</button>
+                <button onClick={handleSubmit}>Submit comment</button>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import Quiz from "./Quiz";
 import Hero3 from "./Hero3";
 import Komments from "./Komments";
 import Footer from "./footer";
+import Buttons from "./Buttons"
 
 
 export default function home() {
@@ -22,7 +23,8 @@ export default function home() {
             <Information2/>
             <Quiz/>
             <Hero3/>
-            <Komments/>
+            {/*<Komments/>*/}
+            <Buttons/>
             <Footer/>
         </div>
     )

@@ -1,0 +1,55 @@
+.container {
+    position: relative;
+    background-color: #313338;
+    margin-left: -8px;
+    height: 20vh;
+    width: 99.2vw;
+    padding-bottom: 25vh;
+
+}
+
+.Buttons {
+    position: absolute;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 40%;
+    left: 10vw;
+    padding-top: 5vh;
+    padding-left: 7vh;
+}
+
+.Buttons button {
+    height: 15vh;
+    width: 25vw;
+    color: #FFFFFF;
+    font-size: 3vh;
+    font-family: Joystix;
+}
+
+.Buttons p {
+    color: #FFFFFF;
+    font-size: 2vh;
+    font-family: Joystix;
+    justify-self: center;
+}
+
+.Donation {
+    background-image: url('../styles/pictures/Button_hell.png');
+    cursor: pointer;
+}
+
+.Donation:hover {
+    background-image: url('../styles/pictures/Button_dunkel.png');
+
+}
+
+.Comment {
+    background-image: url('../styles/pictures/Button_hell_blau.png');
+    cursor: pointer;
+}
+
+.Comment:hover {
+    background-image: url('../styles/pictures/Button_dunkel_blau.png');
+}
