@@ -51,7 +51,7 @@ function Navigation() {
                 </div>
                 <div className={styles.navLinks}>
                     <a href="#" style={{ color: '#FFFFFF' }} onClick={handleDonationButtonClick}>Donation</a>
-                    <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToDiagramm}>Diagramm</a>
+                    <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToDiagramm}>Diagram</a>
                     <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToInformation}>Information</a>
                     <a href="#" style={{ color: '#FFFFFF' }} onClick={scrollToQuiz}>Quiz</a>
                 </div>
